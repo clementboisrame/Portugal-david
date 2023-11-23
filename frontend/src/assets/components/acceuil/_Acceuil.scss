@@ -1,0 +1,16 @@
+.up {
+  display: flex;
+  justify-content: space-between; /* Ajustez cela en fonction de vos besoins */
+  align-items: center; /* Ajustez cela en fonction de vos besoins */
+}
+
+.acceuil,
+.image {
+  flex: 1; /* Cela permet aux deux div d'occuper la même quantité d'espace dans le conteneur flex */
+  padding: 20px; /* Ajoutez du padding au besoin */
+}
+
+.image img {
+  width: 100%; /* Pour assurer que l'image s'ajuste correctement dans son conteneur */
+}
+

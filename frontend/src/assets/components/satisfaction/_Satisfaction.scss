@@ -1,0 +1,21 @@
+.up{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+
+}
+.satisfaction,
+.image {
+  flex: 1; 
+  padding: 20px; 
+}
+
+.image img {
+  width: 100%;
+}
+.satisfaction{
+    display:flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+}
