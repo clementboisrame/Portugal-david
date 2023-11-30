@@ -1,3 +1,14 @@
+.formulaire{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 10vh;
+    border-top: 1px solid;
+    .contact,
+    .image{
+        flex: 1;
+        padding: 20px;
+    }
 .contact {
     display: flex;
     flex-direction: column;
@@ -42,4 +53,6 @@
     button:hover {
         background-color: rgb(11, 70, 138);;
     }
+}
+
 }

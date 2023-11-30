@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import pont from "../../images/contact.jpg"
 const Contact = () => {
   const [formData, setFormData] = useState({
     nom: '',
@@ -25,6 +25,9 @@ const Contact = () => {
   };
 
   return (
+  <div className='formulaire'>
+
+  
     <div className='contact'>
         <h1>Contactez-moi</h1>
     <form onSubmit={handleSubmit}>
@@ -66,6 +69,10 @@ const Contact = () => {
 
       <button type="submit">Envoyer</button>
     </form>
+
+    </div>
+    <div className='image'> 
+    <img src={pont} alt="" /></div>
     </div>
   );
 };

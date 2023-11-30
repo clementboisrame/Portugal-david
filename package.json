@@ -1,15 +1,6 @@
 {
-  "name": "template-fullstack",
-  "version": "4.1.2",
-  "description": "project template for the React-Express-MySQL cursus in Wild Code School",
-  "homepage": "https://github.com/wildcodeschool/js-template-fullstack#readme",
-  "bugs": {
-    "url": "https://github.com/wildcodeschool/js-template-fullstack/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wildcodeschool/js-template-fullstack.git"
-  },
+  "name": "immo-portugal",
+  "description": "Projet de site vitrine pour David Simao",
   "scripts": {
     "postinstall": "cross-env-shell \"husky install && cd ./frontend && npm install && cd ../backend && npm install\"",
     "db:migrate": "cd ./backend && node migrate.js",
@@ -23,13 +14,14 @@
     "start": "cross-env-shell \"cd ./backend && npm run start\""
   },
   "keywords": [],
-  "author": "Wild Code School",
+  "author": "BOISRAME CLEMENT",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3"
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.1.0"
   },
   "main": "index.js"
 }
