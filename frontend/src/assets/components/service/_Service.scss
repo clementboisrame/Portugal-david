@@ -1,45 +1,57 @@
 .up {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10vh;
-    border-top: 1px solid;
-  
-    .Etapes, .image {
-      flex: 0 0 50%; /* Ajustez la largeur selon vos préférences */
-      box-sizing: border-box;
-      padding: 20px;
-    }
-  
-    .Etapes {
-      text-align: center;
-    }
-  
-    img {
-      width: 100%;
-      height: auto;
-    }
-  
-    .etapeUn, .etapeDeux, .etapeTrois, .etapeQuatre {
-      cursor: pointer;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-  
-    .etapeUn.active, .etapeDeux.active, .etapeTrois.active, .etapeQuatre.active {
-      background-color: #329010;
-      min-width: 100%;
-    }
-  
-    .etapeUn ul, .etapeDeux ul, .etapeTrois ul, .etapeQuatre ul {
-      display: none;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-  
-    .etapeUn.active ul, .etapeDeux.active ul, .etapeTrois.active ul, .etapeQuatre.active ul {
-      display: block;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10vh;
+  border-top: 1px solid;
+
+  .Etapes,
+  .image {
+    flex: 0 0 50%; /* Ajustez la largeur selon vos préférences */
+    box-sizing: border-box;
+    padding: 20px;
   }
-  
+
+  .Etapes {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .etapeUn,
+  .etapeDeux,
+  .etapeTrois,
+  .etapeQuatre {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .etapeUn.active,
+  .etapeDeux.active,
+  .etapeTrois.active,
+  .etapeQuatre.active {
+    background-color: #329010;
+    min-width: 100%;
+  }
+
+  .etapeUn ul,
+  .etapeDeux ul,
+  .etapeTrois ul,
+  .etapeQuatre ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .etapeUn.active ul,
+  .etapeDeux.active ul,
+  .etapeTrois.active ul,
+  .etapeQuatre.active ul {
+    display: block;
+  }
+}

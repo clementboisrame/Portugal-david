@@ -1,0 +1,23 @@
+.admin_page {
+  h1 {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+  }
+  h3 {
+    padding-left: 4%;
+  }
+
+  .AnnonceCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 8%;
+  }
+}

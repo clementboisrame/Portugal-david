@@ -1,44 +1,42 @@
 .Header {
-    margin-top: 2%;
-    height: 20dvh;
-    font-size: 10px;
+  height: 20dvh;
+  font-size: 10px;
 
-    .part1 {
+  .part1 {
+    display: flex;
+    justify-content: space-around;
+    background-color: $white;
+    padding-bottom: 1%;
+
+    h1 {
+      color: $textColorDark;
+      background-color: $white;
+      font-size: 3dvh;
+      display: flex;
+      align-items: center;
+      margin-left: 1%;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .drapeau {
+      height: 15dvh;
+    }
+  }
+
+  .menu {
+    font-size: 30px;
+
+    ul {
+      margin-top: 1%;
+      display: flex;
+      justify-content: space-around;
+
+      li {
         display: flex;
-        justify-content: space-around;
-
-        h1 {
-            font-size: 3dvh;
-            display: flex;
-            align-items: center;
-            margin-left: 1%;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .drapeau {
-            height: 15dvh;
-        }
-
+        justify-content: center;
+        color: $white;
+      }
     }
-
-    .menu {
-
-        font-size: 30px;
-
-        ul {
-            display: flex;
-            justify-content: space-around;
-
-            li {
-                display: flex;
-                justify-content: center
-            }
-
-            ;
-        }
-
-    }
-
-
+  }
 }

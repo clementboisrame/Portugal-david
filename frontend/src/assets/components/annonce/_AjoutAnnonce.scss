@@ -1,0 +1,14 @@
+.formulaire {
+  display: flex;
+  justify-content: center;
+  .InputText {
+    background-color: $red;
+  }
+  label {
+    color: $white;
+    background-color: $red;
+  }
+  form {
+    background-color: $red;
+  }
+}

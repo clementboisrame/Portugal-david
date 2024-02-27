@@ -1,0 +1,70 @@
+.InputText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $white;
+
+  label {
+    font-family: $fontFamily;
+    color: $textColorDark;
+    padding-left: 2%;
+    font-size: 20px;
+    background-color: $white;
+  }
+
+  input,
+  textarea {
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    margin: 2%;
+    color: $textColorInput;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: $fontFamily;
+    padding-left: 4%;
+    background-color: rgb(188, 188, 188);
+  }
+  textarea {
+    /* Sélecteur spécifique pour la zone de texte */
+    min-height: 120px; /* Taille minimale de 6 lignes */
+  }
+  input:hover,
+  textarea:hover {
+    cursor: crosshair;
+  }
+
+  .selected {
+    color: $textColorDark;
+  }
+
+  .notselected {
+    color: $textColorInput;
+  }
+
+  // .eye {
+  //   height: 25px;
+  //   width: 35px;
+  //   display: flex;
+  //   margin-left: auto;
+  //   margin-right: 10px;
+  //   margin-top: -37px;
+  //   padding-right: 3px;
+  // }
+
+  // .profil {
+  //   height: 25px;
+  //   width: 35px;
+  //   margin-top: -37px;
+  //   padding-left: 7px;
+  // }
+
+  // .lock {
+  //   height: 25px;
+  //   width: 35px;
+  //   margin-top: -37px;
+  //   padding-left: 7px;
+  // }
+}

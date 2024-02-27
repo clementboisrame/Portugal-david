@@ -1,14 +1,15 @@
-.tarif{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-     border-top: 1px solid;
-    margin: 10dvh;
-     h1{
-        margin-top: 10dvh;
-     }
-  p 
-    {width: 50%;   
-        text-align: justify;
-}}
+.tarif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid;
+  margin: 10dvh;
+  h1 {
+    margin-top: 10dvh;
+  }
+  p {
+    width: 50%;
+    text-align: justify;
+  }
+}
