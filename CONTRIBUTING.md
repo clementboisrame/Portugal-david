@@ -1,4 +1,4 @@
-## How to contribute to this project
+# How to contribute to this project
 
 #### **Did you find a bug?**
 
