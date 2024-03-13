@@ -1,7 +1,7 @@
 const models = require("../models/")
 
 const browse = (req, res) => {
-    models.demande_de_contact
+    models.avis_client
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -12,7 +12,7 @@ const browse = (req, res) => {
       });
   };
   const read = (req, res) => {
-    models.demande_de_contact
+    models.avis_client
       .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
@@ -28,14 +28,14 @@ const browse = (req, res) => {
   };
   
   const edit = (req, res) => {
-    const demande_de_contact = req.body;
+    const avis_client = req.body;
   
     // TODO validations (length, format...)
   
     user.id = parseInt(req.params.id, 10);
   
-    models.demande_de_contact
-      .update(demande_de_contact)
+    models.avis_client
+      .update(avis_client)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -50,14 +50,14 @@ const browse = (req, res) => {
   };
   
   const editById = (req, res) => {
-    const demande_de_contact = req.body;
+    const avis_client = req.body;
   
     // TODO validations (length, format...)
   
-    demande_de_contact.id = parseInt(req.params.id, 10);
+    avis_client.id = parseInt(req.params.id, 10);
   
-    models.demande_de_contact
-      .updateById(demande_de_contact)
+    models.avis_client
+      .updateById(avis_client)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -72,14 +72,14 @@ const browse = (req, res) => {
   };
   
   const add = (req, res) => {
-    const demande_de_contact = req.body;
+    const avis_client = req.body;
   
     // TODO validations (length, format...)
   
-    models.demande_de_contact
+    models.avis_client
       .insert(demande_de_contact)
       .then(([result]) => {
-        res.location(`/api/demande_de_contact/${result.insertId}`).sendStatus(201);
+        res.location(`/api/avis_client/${result.insertId}`).sendStatus(201);
       })
       .catch((err) => {
         console.error(err);
@@ -92,7 +92,7 @@ const browse = (req, res) => {
   };
   
   const destroy = (req, res) => {
-    models.demande_de_contact
+    models.avis_client
       .delete(req.params.id)
       .then(([result]) => {
         if (result.affectedRows === 0) {

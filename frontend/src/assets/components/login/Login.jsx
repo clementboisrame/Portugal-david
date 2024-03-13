@@ -48,15 +48,9 @@ function Login() {
             (user.nom === user.nom) &
             (user.mot_de_passe === user.mot_de_passe)
           ) {
-            console.log('ceci est ', data)
+            console.log('ceci est data LOGIN ', data)
             navigate('/Admin')
-          }
-          //   if (user.admin === 0) {
-          //     setIsAdmin(false);
-          //     setUserConnected(true);
-          //     setUserId(user.sub);
-          //     navigate("/candidate/dashboard");
-          //   }
+                    }
         }
       })
       .catch((err) => {

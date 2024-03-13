@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $primaryColor;
+  background-color: $red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,19 +38,21 @@
     margin-top: 25px;
     min-width: 200px;
     height: 40px;
-    background-color: $primaryColor;
-    color: $textColorLight;
+    background-color: $grey;
+    color: $white;
     font-size: 16px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
+.buttonOnclose{
+  background-color: $white;
+}
   @media screen and (min-width: 801px) {
     .popup-content {
       font-size: 20px;
-      padding: 20%;
+      padding:10%;
     }
   }
 }

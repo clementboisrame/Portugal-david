@@ -1,49 +1,47 @@
-import { Carousel } from 'bootstrap'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Carousel } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
 
-function Card({
-  id,
-  titre,
-  images,
-  prix,
-  description,
-  onClick,
-  onDelete,
-  showButtons
-}) {
-  const [annonce, setAnnonce] = useState([])
-  const [annonceId, setAnnonceId] = useState(id)
+function Card({ id, titre, images, prix, description, onClick, onDelete, showButtons }) {
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [imagesArray, setImagesArray] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const url = `http://localhost:8080/api/annonce`
+    if (Array.isArray(images)) { 
+      setImagesArray(images);
+    }
+  }, [images]);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setAnnonce(data))
-      .catch((err) => console.error("je suis l'eerreur :", err))
-  }, [])
+  const handleToggleFullScreen = () => {
+    setIsFullScreen(!isFullScreen);
+  };
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
   return (
     <div className="Cards" onClick={onClick} role="button" tabIndex={0}>
       <div className="texte">
         <p>{titre}</p>
-        {/* <p>Photos de l'annonce :</p> */}
-
-        {/* <Carousel>
-                {images.map((images, index) =>(
-                    <div key={index}> 
-                        <img src={images} alt={`Photo ${index + 1}`}/>
-                    </div>
-                ))}
-            </Carousel>  */}
-
+        <Carousel activeIndex={index} onSelect={handleSelect} className='carousel'>
+          {imagesArray.map((image, idx) => (
+            <Carousel.Item key={idx}> 
+              <img
+                className="d-block w-100"
+                src={image.trim()}
+                alt={`Photo ${idx + 1}`}
+                style={{ display: idx === index ? 'block' : 'none' }}
+              />
+            </Carousel.Item>
+          ))}
+        </Carousel>
         <p>Prix : {prix}</p>
         <p>Description de l'annonce : {description}</p>
         {showButtons && (
-          <div>
+          <div className='buttonDelete'>
             <button
-              type="button"
+              type="buttonDelete"
               className="Button"
               onClick={() => onDelete(id)}
             >
@@ -53,7 +51,7 @@ function Card({
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

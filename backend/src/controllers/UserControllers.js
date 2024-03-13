@@ -108,25 +108,25 @@ const destroy = (req, res) => {
     });
 };
 
-const getUserForConection = (req, res ,next) =>{
-const {nom} = req.body;
-models.user
+// const getUserForConection = (req, res ,next) =>{
+// const {nom} = req.body;
+// models.user
 
-    .findByMail(nom)
-    .then(([user]) => {
-      if (user[0] != null) {
-        req.user = user[0];
-        console.info("user identified by email");
-        next();
-      } else {
-        res.status(401).send("Adresse mail incorrecte");
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send(" error retrieving data from database ");
-    });
-};
+//     .findByMail(nom)
+//     .then(([user]) => {
+//       if (user[0] != null) {
+//         req.user = user[0];
+//         console.info("user identified by email");
+//         next();
+//       } else {
+//         res.status(401).send("Adresse mail incorrecte");
+//       }
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.status(500).send(" error retrieving data from database ");
+//     });
+// };
 
 
 
@@ -137,5 +137,5 @@ module.exports = {
   editById,
   add,
   destroy,
-  getUserForConection,
+  // getUserForConection,
 }

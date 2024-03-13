@@ -11,7 +11,6 @@ const app = express();
 
 app.use(express.json());
 
-
 const cors = require("cors");
 
 app.use(
@@ -21,16 +20,12 @@ app.use(
       methods: ["GET", "POST", "PUT", "DELETE"],    
   })
 );
-
-
-
-
-
 // Import the API routes from the router module
 const router = require("./router");
 
 app.use( router);
 
+app.use(express.static(path.join(__dirname, "../public")));
 
 const reactBuildPath = path.join(__dirname, "..","..","frontend","dist"
 );

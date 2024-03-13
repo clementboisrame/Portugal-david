@@ -29,14 +29,21 @@ const models = {};
 const UserManager = require("./UserManager");
 const ContactManager = require("./ContactManager");
 const AnnonceManager = require("./AnnonceManager");
+const Avis_clientManager = require("./Avis_clientManager");
+const ImageManager = require("./ImagesManagers");
+
 
 models.user = new UserManager
 models.demande_de_contact = new ContactManager
 models.annonce = new AnnonceManager
+models.annonce_image = new ImageManager
+models.avis_client = new Avis_clientManager
 
 models.user.setDatabase(pool)
 models.demande_de_contact.setDatabase(pool)
 models.annonce.setDatabase(pool)
+models.annonce_image.setDatabase(pool)
+models.avis_client.setDatabase(pool)
 
 const handler = {
   get(obj, prop) {

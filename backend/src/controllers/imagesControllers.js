@@ -1,7 +1,8 @@
-const models = require("../models/");
+const models = require("../models");
+
 
 const browse = (req, res) => {
-  models.avis_client
+  models.annonce_image
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -9,12 +10,12 @@ const browse = (req, res) => {
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);
-    });
-};
+    })
+}
 
 const read = (req, res) => {
-  models.avis_client
-  .find(req.params.id)
+  models.annonce_image
+    .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
         res.sendStatus(404);
@@ -23,42 +24,42 @@ const read = (req, res) => {
       }
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err)
       res.sendStatus(500);
-    });
-};
-
+    })
+}
 const edit = (req, res) => {
-  const contact = req.body;
+  const annonce_image = req.body;
 
-  // TODO validations (length, format...)
+  user.id = parseInt(req.params.id, 10)
 
-  user.id = parseInt(req.params.id, 10);
-
-  models.avis_client
-  .update(avis_client)
+  models.annonce_image
+    .update(annonce_image)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
       } else {
-        res.sendStatus(204);
+        res.sendStatus(204)
       }
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
-    });
-};
+      res.sendStatus(500)
+
+    })
+
+
+}
 
 const editById = (req, res) => {
-  const avis_client = req.body;
+  const annonce_image = req.body;
 
   // TODO validations (length, format...)
 
-  user.id = parseInt(req.params.id, 10);
+  annonce_image.id = parseInt(req.params.id, 10);
 
-  models.avis_client
-  .updateById(avis_client)
+  models.annonce_image
+    .updateById(annonce_image)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -73,33 +74,42 @@ const editById = (req, res) => {
 };
 
 const add = (req, res) => {
-  const avis_client = req.body;
+  const annonce_image = req.body;
 
   // TODO validations (length, format...)
 
-  models.avis_client.insert(avis_client)
+  models.annonce_image
+    .insert(annonce_image)
     .then(([result]) => {
-      res.location(`/api/avis_client/${result.insertId}`).sendStatus(201);
+      res.location(`/api/annonce_image/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
-      if (err.code === "ER_DUP_ENTRY") {
-        res.status(400).send("Email deja utilisé");
-      } else {
-        res.status(500).send("Internal server error");
-      }
+
     });
 };
 
 const destroy = (req, res) => {
-  models.avis_client
-  .delete(req.params.id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+  const id = parseInt(req.params.id, 10);
+
+  models.annonce_image
+    .delete(id) // Utilisez la méthode delete définie dans votre modèle annonceManager
+    .then(() => {
+      res.sendStatus(204); // Renvoyer un statut 204 pour indiquer que la suppression a réussi
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500); // Renvoyer un statut 500 en cas d'erreur
+    });
+};
+
+const addImage = async (req, res) => {
+  const url = process.env.BACKEND_URL_IMAGE + req.fname;
+
+  models.annonce_image
+    .addImage(url, req.params.id)
+    .then(([rows]) => {
+      res.send(rows);
     })
     .catch((err) => {
       console.error(err);
@@ -110,9 +120,9 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
-  edit,
   editById,
+  edit,
   add,
   destroy,
-
-}
+  addImage,
+};

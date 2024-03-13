@@ -19,11 +19,8 @@ const Contact = () => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault() // Assurez-vous d'ajouter ceci pour empêcher le rechargement de la page
-
-    // Affichez les données dans la console
+    e.preventDefault() 
     console.log('Données du formulaire:', formData)
-    // Envoi des données au serveur
     fetch('http://localhost:8080/api/demande_de_contact/register', {
       method: 'POST',
       headers: {
@@ -31,10 +28,8 @@ const Contact = () => {
       },
       body: JSON.stringify(formData)
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Gérer la réponse du serveur si nécessaire
-        console.log('Réponse du serveur:', data)
+      .then((response) => response.json)
+      .then((data) => {console.log('Réponse du serveur:', data),data
       })
       .catch((error) => {
         console.error("Erreur lors de l'envoi des données:", error)

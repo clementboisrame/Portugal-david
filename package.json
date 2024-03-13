@@ -8,11 +8,11 @@
     "dev": "cross-env-shell 'concurrently -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm:dev-*\"'",
     "dev-front": "cross-env-shell \"cd ./frontend && npm run dev\"",
     "dev-back": "cross-env-shell \"cd ./backend && npm run dev\"",
-    "lint": "lint-staged",
     "prebuild": "npm install",
     "build": "cross-env-shell \"cd ./frontend && npm run build && cd ../backend && npm run build\"",
     "start": "npm-run-all -p dev:frontend dev:backend",
     "dev:backend": "cd backend && npm run dev",
+    "lint": "eslint \"**/*.{js,jsx}\"",
     "dev:frontend": "cd frontend && npm run dev"
   },
   "keywords": [],

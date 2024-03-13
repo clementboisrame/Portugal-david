@@ -1,6 +1,7 @@
 .Header {
   height: 20dvh;
-  font-size: 10px;
+  font-size: 16px;
+  
 
   .part1 {
     display: flex;
@@ -31,6 +32,7 @@
       margin-top: 1%;
       display: flex;
       justify-content: space-around;
+    
 
       li {
         display: flex;

@@ -22,7 +22,7 @@ function AjoutAnnonce() {
     titre: '',
     description: '',
     prix: '',
-    images: ''
+    images: []
   })
 
   const handleChange = (e) => {
@@ -37,14 +37,10 @@ function AjoutAnnonce() {
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log('Form Data:', formData)
-    // const formattedDate = new Date(formData.date)
-    //   .toISOString()
-    //   .slice(0, 19)
-    //   .replace("T", " ");
 
     const requestData = {
       ...formData
-      //   date: formattedDate,
+
     }
 
     const url = 'http://localhost:8080/api/annonce/register'
@@ -56,7 +52,6 @@ function AjoutAnnonce() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
-          //   Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(requestData)
       })
@@ -115,7 +110,8 @@ function AjoutAnnonce() {
             message={error || "L'annonce a bien été publiée"}
             open={showPopup1}
             onClose={handlePopup1Close}
-            buttonname="Retour "
+            cancelText="Retour "
+            showConfirmButton={false}
           />
         )}
       </form>
